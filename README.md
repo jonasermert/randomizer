@@ -2,6 +2,8 @@
 
 A new Flutter project which I implement during the Reso Coder Flutter Development Bootcamp
 
+https://resocoder.com/
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
