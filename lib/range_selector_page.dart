@@ -23,12 +23,12 @@ class _RangeSelectorPageState extends State<RangeSelectorPage> {
           padding: const EdgeInsets.all(16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
               RangeSelectorTextFormField(
                 labelText: 'Minimum',
                 intValueSetter: (value) => _min = value,
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               RangeSelectorTextFormField(
                 labelText: 'Maximum',
                 intValueSetter: (value) => _max = value,
@@ -68,6 +68,13 @@ class RangeSelectorTextFormField extends StatelessWidget {
         decimal: false,
         signed: true,
       ),
+      validator: (value) {
+        if (value == null || int.tryParse(value) == null) {
+          return 'This must be an Integer';
+        } else {
+          return null;
+        }
+      },
       onSaved: (newValue) => intValueSetter(int.parse(newValue ?? '')),
     );
   }
