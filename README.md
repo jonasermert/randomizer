@@ -1,6 +1,6 @@
 # randomizer
 
-A new Flutter project.
+A new Flutter project which I implement during the Reso Coder Flutter Development Bootcamp
 
 ## Getting Started
 
