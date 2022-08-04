@@ -20,27 +20,14 @@ class _RangeSelectorPageState extends State<RangeSelectorPage> {
           padding: const EdgeInsets.all(16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextFormField(
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Minimum',
-                ),
-                keyboardType: const TextInputType.numberWithOptions(
-                  decimal: false,
-                  signed: true,
-                ),
+            children: const [
+              SizedBox(height: 12),
+              RangeSelectorTextFormField(
+                labelText: 'Minimum',
               ),
-              const SizedBox(height: 12),
-              TextFormField(
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Maximum',
-                ),
-                keyboardType: const TextInputType.numberWithOptions(
-                  decimal: false,
-                  signed: true,
-                ),
+              SizedBox(height: 12),
+              RangeSelectorTextFormField(
+                labelText: 'Maximum',
               ),
             ],
           ),
@@ -52,6 +39,27 @@ class _RangeSelectorPageState extends State<RangeSelectorPage> {
             // TODO: Validate the Form
             // TODO: Navigate to the generator page
           }),
+    );
+  }
+}
+
+class RangeSelectorTextFormField extends StatelessWidget {
+  const RangeSelectorTextFormField({Key? key, required this.labelText})
+      : super(key: key);
+
+  final String labelText;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      decoration: const InputDecoration(
+        border: OutlineInputBorder(),
+        labelText: labelText,
+      ),
+      keyboardType: const TextInputType.numberWithOptions(
+        decimal: false,
+        signed: true,
+      ),
     );
   }
 }
